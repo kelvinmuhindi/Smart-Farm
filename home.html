@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Farm</title>
+  <link rel="icon" type="image/png" href="image/smartfarm.png">
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="header">
+    <h1 class="logo"><a href="#">Smart Farm</a></h1>
+     <ul class="main-nav">
+         <li><a href="#">Home</a></li>
+         <li><a href="about.html">About</a></li>
+         <li><a href="#">Settings</a></li>
+     </ul>
+  </header>
+  <div class="row">
+      <h2>Temperature And Humidity</h2>
+    <div class="column">
+       <!-- Temperature--> 
+      <div class="container" id="temperature">
+        <div class="background">
+          <div class="Circle1"></div>
+          <div class="Circle2"></div>
+          <div class="Circle3"></div>
+          <div class="content">
+            <h1 class="Condition"><i class="material-icons sun">wb_sunny</i> Sunny</h1>
+            <h1 class="Temp">20<span id="C">&#8451;</span></h1>
+            <h1 class="Time"><p id="clock"></p></h1>
+            <h1 class="Location"><i class="material-icons locationIcon">place</i> Nairobi, Kenya</h1>
+          </div>
+        </div>
+      </div><br>
+
+      <div class="humidity" id="humidity">
+        <div>
+          <h1 ><span class="bi bi-moisture sun"></span> Humidity</h1>
+          <h1 class="humid">39 %</h1>
+          <p>The dew point is 7<span>&#176;</spam> right now</p>
+        </div>      
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <h2>Soil Moisture Content</h2>
+      <div class="soilmoisture" id="soilmoisture">
+        <canvas id="myChart" style="height: 30px; width: 300px;"></canvas>
+      </div>
+  </div>
+  <div class="row">
+    <h2>Water Tank Level</h2>
+    <div class="water-tank">
+      <div class="water-level" id="water-level">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" style="display: none;">
+          <symbol id="wave">
+            <path d="M420,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C514,6.5,518,4.7,528.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H420z"></path>
+            <path d="M420,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C326,6.5,322,4.7,311.5,2.7C304.3,1.4,293.6-0.1,280,0c0,0,0,0,0,0v20H420z"></path>
+            <path d="M140,20c21.5-0.4,38.8-2.5,51.1-4.5c13.4-2.2,26.5-5.2,27.3-5.4C234,6.5,238,4.7,248.5,2.7c7.1-1.3,17.9-2.8,31.5-2.7c0,0,0,0,0,0v20H140z"></path>
+            <path d="M140,20c-21.5-0.4-38.8-2.5-51.1-4.5c-13.4-2.2-26.5-5.2-27.3-5.4C46,6.5,42,4.7,31.5,2.7C24.3,1.4,13.6-0.1,0,0c0,0,0,0,0,0l0,20H140z"></path>
+          </symbol>
+        </svg>
+        <div class="box">
+          <div class="percent">
+            <div class="percentNum" id="count">0</div>
+            <div class="percentB">%</div>
+          </div>
+          <div id="water" class="water">
+            <svg viewBox="0 0 560 20" class="water_wave water_wave_back">
+              <use xlink:href="#wave"></use>
+            </svg>
+            <svg viewBox="0 0 560 20" class="water_wave water_wave_front">
+              <use xlink:href="#wave"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var cnt=document.getElementById("count"); 
+    var water=document.getElementById("water");
+    var percent=cnt.innerText;
+    var interval;
+    interval=setInterval(function(){ 
+      percent++; 
+      cnt.innerHTML = percent; 
+      water.style.transform='translate(0'+','+(100-percent)+'%)';
+      if(percent==100){
+        clearInterval(interval);
+      }
+      },60);
+  </script>
+  <script src="js/main.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
+

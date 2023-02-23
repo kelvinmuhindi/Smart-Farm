@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Smart Farm</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f5f5f5;
+			color: #333;
+			margin: 0;
+			padding: 0;
+		}
+		header {
+			padding-top: .5em;
+			padding-bottom: .5em;
+			border: 1px solid #a2a2a2;
+			background-color: #f1f1f1;
+			-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+			-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+			box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			border-radius: 5px;
+		}
+		h1 {
+			margin: 0;
+			font-size: 36px;
+			color: green;
+		}
+		main {
+			max-width: 800px;
+			margin: 20px auto;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+		}
+		ul {
+		  margin: 0;
+		  padding: 0;
+		  list-style: none;
+		}
+		h2 {
+			margin-top: 0;
+			font-size: 24px;
+		}
+		table {
+			border-collapse: collapse;
+			width: 100%;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		th, td {
+			padding: 10px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+		}
+		th {
+			background-color: #006404;
+			color: #fff;
+		}
+		.sensor {
+			display: flex;
+			align-items: center;
+			margin-bottom: 10px;
+		}
+		.sensor img {
+			max-height: 40px;
+			margin-right: 10px;
+		}
+		.sensor p {
+			margin: 0;
+			font-size: 20px;
+			font-weight: bold;
+		}
+		.main-nav {
+		  margin-top: 5px;
+
+		}
+		.logo a,
+		.main-nav a {
+		  padding: 10px 15px;
+		  text-transform: uppercase;
+		  text-align: center;
+		  display: block;
+		}
+
+		.main-nav a {
+		  color: green;
+		  font-size: .99em;
+		}
+
+		.main-nav a:hover {
+		  color: #000000;
+		}
+		@media (min-width: 769px) {
+  			.header,.main-nav {
+    			display: flex;
+  			}
+  			.header {
+    			flex-direction: column;
+   				align-items: center;
+  			}
+  			.header{
+    			width: 80%;
+    			margin: 0 auto;
+    			max-width: 1150px;
+  			}
+		}
+
+		@media (min-width: 1025px) {
+  			.header {
+    			flex-direction: row;
+    			justify-content: space-between;
+  			}
+		}
+	</style>
+</head>
+<body>
+	<header class="header">
+		<h1 class="logo"><a href="#">Smart Farm</a></h1>
+    	<ul class="main-nav">
+         	<li><a href="home.html">Home</a></li>
+         	<li><a href="#">About</a></li>
+         	<li><a href="settings.html">Settings</a></li>
+     	</ul>
+	</header>
+	<main>
+		<h2>Sensor Data</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Sensor</th>
+					<th>Value</th>
+					<th>Units</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<div class="sensor">
+							<img src="image/temperature1.png" alt="Temperature Sensor">
+							<p>Temperature</p>
+						</div>
+					</td>
+					<td>20</td>
+					<td>&deg;C</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="sensor">
+							<img src="image/humidity.png" alt="Humidity Sensor">
+							<p>Humidity</p>
+						</div>
+					</td>
+					<td>39</td>
+					<td>%</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="sensor">
+							<img src="image/water.png" alt="Water Tank Level Sensor">
+							<p>Water Tank Level</p>
+						</div>
+					</td>
+					<td>100</td>
+					<td>%</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="sensor">
+							<img src="image/soil.png" alt="Soil Moisture Sensor">
+							<p>Soil Moisture</p>
+						</div>
+					</td>
+					<td>0.8</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+		<h2>Overview</h2>
+		<p>Our smart farm uses a variety of sensors to monitor and optimize growing conditions for crops. The temperature sensor ensures that the temperature stays within the ideal range for plant growth, while the humidity sensor ensures that the air is not too dry or too damp. The water tank level sensor alerts us when it's time to refill the tank, and the soil moisture sensor ensures that the plants are not over- or under-watered.</p>
+	</main>
+
+</body>
+</html>
