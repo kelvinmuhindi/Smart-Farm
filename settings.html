@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="icon" type="image/png" href="image/smartfarm.png">
+	<title>Smart Farm</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+		}
+		h1 {
+			text-align: center;
+		}
+		.TempControl {
+			display: flex;
+			flex-direction: column;
+			position: relative;
+			align-items: center;
+			margin-top: 20px;
+			float: center;
+			box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+			border-radius: 4px;
+			padding: 20px;
+		}
+		.temperature {
+			font-size: 80px;
+			font-weight: bold;
+			margin-bottom: 20px;
+			text-align: center;
+			color: #2196F3;
+		}
+		.controls {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			width: 100%;
+			max-width: 500px;
+		}
+		button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 16px;
+			font-weight: bold;
+			transition: background-color 0.3s;
+		}
+		button:hover {
+			background-color: #3e8e41;
+		}
+		button:active {
+			background-color: #3e8e41;
+			box-shadow: 0 5px #666;
+			transform: translateY(4px);
+		}
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 12px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			float: right;
+		}
+		input[type="submit"]:hover {
+			background-color: #45a056;
+		}
+	</style>
+</head>
+<body>
+	<header class="header">
+		<h1 class="logo"><a href="#">Smart Farm</a></h1>
+    	<ul class="main-nav">
+         	<li><a href="home.html">Home</a></li>
+         	<li><a href="about.html">About</a></li>
+         	<li><a href="#">Settings</a></li>
+     	</ul>
+	</header>
+	<h1>Temperature Control</h1>
+	<div class="TempControl">
+		<div class="temperature">20&deg;C</div>
+		<div class="controls">
+			<button id="decrease">-</button>
+			<button id="increase">+</button>
+		</div>
+		<input type="submit" value="Submit" onclick="alert('Temperature has been updated!')">
+	</div>
+	<h1>Water Tank Level Control</h1>
+	<div class="WaterTank">
+		
+	</div>
+	<script>
+		var temperature = 20;
+
+		document.getElementById("increase").addEventListener("click", function() {
+			temperature++;
+			updateTemperature();
+		});
+
+		document.getElementById("decrease").addEventListener("click", function() {
+			temperature--;
+			updateTemperature();
+		});
+
+		function updateTemperature() {
+			document.querySelector(".temperature").innerHTML = temperature + "&deg;C";
+		}
+	</script>
+</body>
+</html>
