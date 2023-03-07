@@ -268,3 +268,69 @@ a {
   font-size: 19.5px !important;
 }
 
+
+/* Temperature Widget for Mobile Devices */
+@media (max-width: 480px) {
+  .container {
+    height: auto;
+  }
+
+  .Circle1 {
+    height: 50px;
+    width: 50px;
+    right: 5%;
+    top: 5%;
+  }
+
+  .Circle2 {
+    height: 100px;
+    width: 100px;
+    right: 50%;
+    top: 10%;
+    transform: translateX(50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .header,
+  .main-nav {
+    flex-direction: column;
+  }
+  .header {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+  .logo {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .logo a,
+  .main-nav a {
+    padding: 10px 0;
+  }
+  .main-nav {
+    margin-top: 10px;
+    text-align: center;
+  }
+  .main-nav a {
+    font-size: 1.2em;
+  }
+  .Condition {
+    font-size: 18px;
+  }
+  .Temp {
+    font-size: 32px;
+  }
+  #C {
+    font-size: 32px;
+  }
+  .Time {
+    font-size: 18px;
+  }
+  .Location {
+    font-size: 14px;
+  }
+ .locationIcon {
+    font-size: 10px !important;
+  }
+}

@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Smart Farm</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
   <link rel="icon" type="image/png" href="image/smartfarm.png">
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
@@ -83,18 +84,22 @@
     </div>
   </div>
   <script>
-    var cnt=document.getElementById("count"); 
-    var water=document.getElementById("water");
-    var percent=cnt.innerText;
-    var interval;
-    interval=setInterval(function(){ 
-      percent++; 
-      cnt.innerHTML = percent; 
-      water.style.transform='translate(0'+','+(100-percent)+'%)';
-      if(percent==100){
-        clearInterval(interval);
-      }
-      },60);
+   var cnt=document.getElementById("count"); 
+   var water=document.getElementById("water");
+   var percent= 0; // change this to the desired percentage input
+   var interval;
+   interval=setInterval(function(){ 
+       percent++; 
+       if (percent > 100) {
+           percent = 100;
+       }
+       cnt.innerHTML = percent; 
+       water.style.transform='translate(0'+','+(100-percent)+'%)';
+       if(percent >= desired_percent){
+           clearInterval(interval);
+       }
+   },80);
+
   </script>
   <script src="js/main.js"></script>
   <script src="js/script.js"></script>
